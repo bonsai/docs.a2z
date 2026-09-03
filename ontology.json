@@ -1,0 +1,29 @@
+{
+  "id": "blueprint-a2z",
+  "title": "A2Z Blueprint Ontology",
+  "version": "0.1.0",
+  "description": "Software design expressed as 26 complementary viewpoints from A to Z.",
+  "principle": "A-Z is not a document taxonomy; it is a set of viewpoints for observing one system.",
+  "viewpoints": [
+    {"letter":"A","name":"Architecture"},{"letter":"B","name":"Business"},{"letter":"C","name":"Concept"},{"letter":"D","name":"Data"},{"letter":"E","name":"Entity"},{"letter":"F","name":"Flow"},{"letter":"G","name":"Graph"},{"letter":"H","name":"Human"},{"letter":"I","name":"Interface"},{"letter":"J","name":"Job"},{"letter":"K","name":"KPI"},{"letter":"L","name":"Logic"},{"letter":"M","name":"Model"},{"letter":"N","name":"Network"},{"letter":"O","name":"Operation"},{"letter":"P","name":"Process"},{"letter":"Q","name":"Quality"},{"letter":"R","name":"Requirement"},{"letter":"S","name":"Security"},{"letter":"T","name":"Test"},{"letter":"U","name":"UX"},{"letter":"V","name":"Version"},{"letter":"W","name":"Workflow"},{"letter":"X","name":"External"},{"letter":"Y","name":"YAML"},{"letter":"Z","name":"Zero"}
+  ],
+  "core_chain": ["Requirement","Concept","Architecture","Entity","Data","Flow","Interface","Logic","Process","Workflow","Test"],
+  "relations": [
+    "Requirement informs Concept",
+    "Concept shapes Architecture",
+    "Architecture contains Entity",
+    "Entity produces or consumes Data",
+    "Data moves through Flow",
+    "Flow crosses Interface",
+    "Logic transforms Data",
+    "Process contains Job",
+    "Workflow orchestrates Process",
+    "Test verifies Requirement",
+    "KPI measures Business value",
+    "Security protects System",
+    "Quality constrains System",
+    "Version evolves System",
+    "Operation runs System",
+    "External connects to System"
+  ]
+}
