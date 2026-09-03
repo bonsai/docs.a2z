@@ -1,11 +1,15 @@
 {
   "id": "blueprint-a2z",
   "title": "A2Z Blueprint Ontology",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Software design expressed as 26 complementary viewpoints from A to Z.",
   "principle": "A-Z is not a document taxonomy; it is a set of viewpoints for observing one system.",
   "viewpoints": [
     {"letter":"A","name":"Architecture"},{"letter":"B","name":"Business"},{"letter":"C","name":"Concept"},{"letter":"D","name":"Data"},{"letter":"E","name":"Entity"},{"letter":"F","name":"Flow"},{"letter":"G","name":"Graph"},{"letter":"H","name":"Human"},{"letter":"I","name":"Interface"},{"letter":"J","name":"Job"},{"letter":"K","name":"KPI"},{"letter":"L","name":"Logic"},{"letter":"M","name":"Model"},{"letter":"N","name":"Network"},{"letter":"O","name":"Operation"},{"letter":"P","name":"Process"},{"letter":"Q","name":"Quality"},{"letter":"R","name":"Requirement"},{"letter":"S","name":"Security"},{"letter":"T","name":"Test"},{"letter":"U","name":"UX"},{"letter":"V","name":"Version"},{"letter":"W","name":"Workflow"},{"letter":"X","name":"External"},{"letter":"Y","name":"YAML"},{"letter":"Z","name":"Zero"}
+  ],
+  "cross_cutting_concerns": [
+    {"name":"DX","meaning":"Developer / Agent Experience","targets":["Developer","Agent"]},
+    {"name":"UX","meaning":"User Experience","targets":["User"]}
   ],
   "core_chain": ["Requirement","Concept","Architecture","Entity","Data","Flow","Interface","Logic","Process","Workflow","Test"],
   "relations": [
@@ -19,11 +23,27 @@
     "Process contains Job",
     "Workflow orchestrates Process",
     "Test verifies Requirement",
+    "Business defines value for Requirement",
+    "Human interacts through UX",
+    "Interface shapes UX",
+    "Architecture enables DX",
+    "DX supports Developer and Agent",
+    "Developer and Agent operate through Workflow and Test",
     "KPI measures Business value",
     "Security protects System",
     "Quality constrains System",
     "Version evolves System",
     "Operation runs System",
-    "External connects to System"
-  ]
+    "External connects to Interface",
+    "Network connects System components",
+    "YAML declares Architecture and Workflow configuration",
+    "Zero defines initial System state"
+  ],
+  "interaction_graph": {
+    "center": "Architecture",
+    "primary": ["Requirement","Concept","Architecture","Entity","Data","Flow","Interface","Logic","Process","Workflow","Operation","Test"],
+    "actors": ["Human","User","Developer","Agent","External"],
+    "cross_cutting": ["Business","DX","UX","Security","Quality","KPI","Version"],
+    "rule": "Architecture is the structural center; DX and UX are cross-cutting experience dimensions, not additional A-Z viewpoints."
+  }
 }
